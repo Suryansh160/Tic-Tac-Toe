@@ -1,0 +1,99 @@
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --primary-color: #16213e;
+    --secondary-color: #0f3460;
+    --accent-color: #e94560;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(img/Untitled\ design.png);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.hide{
+display: none;
+}
+
+.container {
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.new-btn{
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.msg-container{
+    position: fixed;
+    top: 2rem;
+}
+.box {
+    width: 8rem;
+    height: 8rem;
+    font-size: 3rem;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: var(--text-color);
+    cursor: pointer;
+/* transition: background-color 0.3s, transform 0.1s; */
+}
+
+
+.Reset {
+    
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+
+
+
+
+
+
