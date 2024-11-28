@@ -60,7 +60,7 @@ display: none;
 .box {
     width: 8rem;
     height: 8rem;
-    font-size: 3rem;
+    font-size: 1px;
     background-color: white;
     border: none;
     border-radius: 10px;
