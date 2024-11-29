@@ -24,22 +24,22 @@ const resetGame=()=>{
     count2=0;
     score1.classList.add("hide");
     enableBoxes();
+    msg.classList.add("hide");
     score2.classList.add("hide");
     msgCont.classList.add("hide");
 }
 const newGame=()=>{
     turno=true;
     enableBoxes();
+    msg.classList.add("hide");
     msgCont.classList.add(".hide");
 }
+
 boxes.forEach((box)=>{
     box.addEventListener("click",()=>{
         console.log("s");
         if(turno===true){
-
             box.innerHTML = '<img src="./img/img1.png" alt="x"  width="120">X</img>';
-             
-           
             turno=false;
         }
         else if(turno===false)
@@ -69,6 +69,7 @@ const showWinner=(winner)=>{
     if(winner==="X"){
 msg.innerText=`Congratulations, Winner is ${"Player 1"}`;
 count1++;
+msg.classList.add("hide");
 score1.classList.remove("hide");
 score2.classList.remove("hide");
 msgCont.classList.remove("hide");
@@ -78,6 +79,7 @@ score1.innerText=`${count1}`;
     msg.innerText=`Congratulations, Winner is ${"Player 2"}`;
     count2++;
     score2.innerText=`${count2}`;
+    msg.classList.add("hide");
     score1.classList.remove("hide");
     score2.classList.remove("hide");
     msgCont.classList.remove("hide");}
