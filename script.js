@@ -4,6 +4,10 @@ let turno=true;
 let newGameBtn=document.querySelector(".new-btn");
 let msgCont=document.querySelector(".msg-container");
 let msg=document.querySelector(".msg");
+let count1=0;
+let count2=0;
+let score1=document.querySelector(".score1");
+let score2=document.querySelector(".score2");
 const winPatterns=[
     [0,1,2],
     [3,4,5],
@@ -16,6 +20,15 @@ const winPatterns=[
 ];
 const resetGame=()=>{
     turno=true;
+    count1=0;
+    count2=0;
+    score1.classList.add("hide");
+    enableBoxes();
+    score2.classList.add("hide");
+    msgCont.classList.add("hide");
+}
+const newGame=()=>{
+    turno=true;
     enableBoxes();
     msgCont.classList.add(".hide");
 }
@@ -25,7 +38,7 @@ boxes.forEach((box)=>{
         if(turno===true){
 
             box.innerHTML = '<img src="./img/img1.png" alt="x"  width="120">X</img>';
-
+             
            
             turno=false;
         }
@@ -53,10 +66,21 @@ const enableBoxes=()=>{
 }
 
 const showWinner=(winner)=>{
-    if(winner==="X")
+    if(winner==="X"){
 msg.innerText=`Congratulations, Winner is ${"Player 1"}`;
-    else
+count1++;
+score1.classList.remove("hide");
+score2.classList.remove("hide");
+msgCont.classList.remove("hide");
+score1.innerText=`${count1}`;
+    }
+    else{
     msg.innerText=`Congratulations, Winner is ${"Player 2"}`;
+    count2++;
+    score2.innerText=`${count2}`;
+    score1.classList.remove("hide");
+    score2.classList.remove("hide");
+    msgCont.classList.remove("hide");}
 msg.classList.remove("hide");
 disableBoxes();
 }
@@ -76,5 +100,5 @@ const checkWinner=()=>{
     }
 }
 
-newGameBtn.addEventListener("click",resetGame);
+newGameBtn.addEventListener("click",newGame);
 resetBtn.addEventListener("click",resetGame);
